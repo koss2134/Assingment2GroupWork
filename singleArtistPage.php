@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/index.css">
-    <title>Single Genre Page</title>
+    <title>Single Artist Page</title>
 </head>
 <body>
 <header>
@@ -13,7 +13,7 @@
     <span id="headerLinks">LINK TO PAGES HERE</span>
 </header>
 <main>
-    <div id="genreInfo">
+    <div id="artistInfo">
 
     </div>
     <div id="paitingList">
