@@ -1,0 +1,55 @@
+.container {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 20rem 25rem auto;
+  color: #444;
+}
+
+
+#head {
+  grid-column: 1 / span 3;
+    grid-row: 1 / span 4;
+    border-color: black;
+    border: solid;
+  /*width:100%;*/
+/*display :none;*/
+/*visibility: hidden;*/
+/*display :none; vis hidden takes up no space*/
+
+}
+
+#galleryList {
+  grid-column: 1 / span 1;
+    grid-row: 5 / span 30;
+    border-color: black;
+    border: solid;
+   /* height: 100%*/
+  /*width:70%;*/
+/*display :none;*/
+/*visibility: hidden;*/
+/*display :none; vis hidden takes up no space*/
+
+}
+
+#artistList {
+  grid-column: 2 / span 2;
+    grid-row: 5 / span 15;
+    border-color: black;
+    border: solid;
+  /*width:70%;*/
+/*display :none;*/
+/*visibility: hidden;*/
+/*display :none; vis hidden takes up no space*/
+
+}
+#genreList {
+  grid-column: 2 / span 2;
+    grid-row: 20 / span 15;
+    border-color: black;
+    border: solid;
+  /*width:70%;*/
+/*display :none;*/
+/*visibility: hidden;*/
+/*display :none; vis hidden takes up no space*/
+
+}
