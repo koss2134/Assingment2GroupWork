@@ -36,6 +36,8 @@
     grid-row: 5 / span 15;
     border-color: black;
     border: solid;
+ max-height: 20px;
+    overflow: auto;
   /*width:70%;*/
 /*display :none;*/
 /*visibility: hidden;*/
