@@ -85,7 +85,7 @@ try {
 
  while ($row = $result->fetch()) {
    
-  echo " &nbsp <A href='singleArtistPage.php?ArtistID=". $row['ArtistID'] ."'>". $row['FirstName'] . $row['LastName'] ." IFM:". $row['ImageFileName'] . "</a> &nbsp ";
+  echo " &nbsp <A href='singleArtistPage.php?ArtistID=". $row['ArtistID'] ."'>". $row['FirstName'] . $row['LastName'] ." <img src='images/1.jpg'>". "</a> &nbsp ";
 
  }
 
@@ -110,7 +110,7 @@ try {
 
  while ($row = $result->fetch()) {
    
-  echo " &nbsp <A href='singleGenrePage.php?GenreID=". $row['GenreID'] ."'>". $row['GenreName'] . "</a> &nbsp ";
+  echo " &nbsp <img src='images/1.jpg'><A href='singleGenrePage.php?GenreID=". $row['GenreID'] ."'>" . $row['GenreName'] . "</a> &nbsp ";
 
  }
 
