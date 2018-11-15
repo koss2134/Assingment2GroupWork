@@ -4,12 +4,12 @@ require_once 'config.inc.php';
 
 ?>
 
-
+<link rel="stylesheet" href="css/index.css">
 <html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="css/index.css">
+    <!--link rel="stylesheet" href="css/index.css"-->
     <title>Home Page</title>
 </head>
 <body>
@@ -33,7 +33,8 @@ require_once 'config.inc.php';
     <td></td>
     <td>ICON<BR>Home</td>
     <td>ICON<BR>About</td>
-    <td>ICON<BR>Log In/Out</td>
+    <td>ICON<BR><a href="loginPage.php">Log In/Out</a></td>
+    <td>ICON<BR><a href="registerPage.php">Register</a></td>
     <td>ICON<BR>Favorites</td>
 </tr>
 </table>    
@@ -50,6 +51,9 @@ try {
 
  $sql = "SELECT GalleryID, GalleryName FROM Galleries";
  $result = $pdo->query($sql);
+//$num_rows = mysql_num_rows($result);
+$number_of_rows = $result->rowCount();
+echo "Number of rows returned:". $number_of_rows;
 
  echo "<ul style='list-style-type:none'>";
  
