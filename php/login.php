@@ -4,7 +4,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         if(checkEmail($_POST["email"]) == true && checkPassword($_POST["pass"]) == true){
             $_SESSION["status"] = true;
             $_SESSION["email"] = $_POST["email"];
-            $_Session["pass"] = $_POST["pass"];
+            $_SESSION["pass"] = $_POST["pass"];
             header('Location: /index.php');
         }
         else{

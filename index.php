@@ -52,8 +52,8 @@ try {
  $sql = "SELECT GalleryID, GalleryName FROM Galleries";
  $result = $pdo->query($sql);
 //$num_rows = mysql_num_rows($result);
-$number_of_rows = $result->rowCount();
-echo "Number of rows returned:". $number_of_rows;
+//$number_of_rows = $result->rowCount();
+//echo "Number of rows returned:". $number_of_rows;
 
  echo "<ul style='list-style-type:none'>";
  
@@ -86,12 +86,17 @@ try {
          Group by Artists.ArtistID";
  $result = $pdo->query($sql);
 
+//echo "test!!!!!!!!!!!!!!!!!";
 
  while ($row = $result->fetch()) {
-   
-  echo " &nbsp <A href='singleArtistPage.php?ArtistID=". $row['ArtistID'] ."'>". $row['FirstName'] . $row['LastName'] ." <img src='images/1.jpg'>". "</a> &nbsp ";
-
+echo "<div style='float: right;'>";
+         
+      echo "<div > <img src='images/1.jpg'></div>"; 
+      echo " <div> <A href='singleArtistPage.php?ArtistID=". $row['ArtistID'] ."'>". $row['FirstName'] . $row['LastName'] . "</a> </div> ";
+  
+echo " </div>";
  }
+
 
 }
 catch (PDOException $e) {
@@ -113,9 +118,13 @@ try {
 
 
  while ($row = $result->fetch()) {
-   
-  echo " &nbsp <img src='images/1.jpg'><A href='singleGenrePage.php?GenreID=". $row['GenreID'] ."'>" . $row['GenreName'] . "</a> &nbsp ";
 
+echo "<div style='float: right;'>";
+  echo "<div><img src='images/1.jpg'></div>";
+  echo " <div> <A href='singleGenrePage.php?GenreID=". $row['GenreID'] ."'>" . $row['GenreName'] . "</a> </div> ";
+
+
+echo "</div>";
  }
 
 }
