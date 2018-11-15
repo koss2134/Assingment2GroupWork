@@ -8,12 +8,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             header('Location: /index.php');
         }
         else{
-            header('Location: /loginPage.php');
+            header('Location: /registerPage.php');
         }
     }
 }
 function checkEmail($email){
-    if($email == koss){
+    if($email == 'koss@123.com'){
         return true;
     }
     return false;
