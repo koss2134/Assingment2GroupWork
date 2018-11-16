@@ -9,37 +9,15 @@ require_once 'config.inc.php';
 <html lang="en">
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width; initial-scale=1.0;">
     <!--link rel="stylesheet" href="css/index.css"-->
     <title>Home Page</title>
 </head>
 <body>
-<header>
-    <img src="" id="logo"/>
-    <h1 id="websiteTitle">Title of website</h1>
-    <h2 id="websiteSubtitle">subtittle</h2>
-    <span id="headerLinks">LINK TO PAGES HERE</span>
-    
-
-
-</header>
+<?php
+include 'php/header.php';
+?>
 <main class="container">
-<div id="head">
-<table width='100%'>
-<tr>
-    <td width='50%'>Logo</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td>ICON<BR>Home</td>
-    <td>ICON<BR>About</td>
-    <td>ICON<BR><a href="loginPage.php">Log In/Out</a></td>
-    <td>ICON<BR><a href="registerPage.php">Register</a></td>
-    <td>ICON<BR>Favorites</td>
-</tr>
-</table>    
-</div>
-
 <div id="galleryList">
 <?php  
 // output all the retrieved galleries (hint: set value attribute of <option> to the GalleryID field)
@@ -69,7 +47,7 @@ catch (PDOException $e) {
  die( $e->getMessage() );
 }
   ?>
-  
+  <a href = "singlePaintingPage.php?PaintingID=">TEST LINK FOR PAINTING</a>
     </div>
     <div id="artistList"><!-- max-height: 1%; -->
 <?php  
@@ -122,8 +100,6 @@ try {
 echo "<div style='float: right;'>";
   echo "<div><img src='images/1.jpg'></div>";
   echo " <div> <A href='singleGenrePage.php?GenreID=". $row['GenreID'] ."'>" . $row['GenreName'] . "</a> </div> ";
-
-
 echo "</div>";
  }
 
@@ -132,6 +108,7 @@ catch (PDOException $e) {
  die( $e->getMessage() );
 }
   ?>
+
     </div>
 </main>
 </body>

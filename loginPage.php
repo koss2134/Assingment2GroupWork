@@ -1,6 +1,7 @@
 <html lang="en">
 <html>
 <head>
+    <link rel="stylesheet" href="css/default.css">
     <script>
         function validateLogin() {
         var email = document.forms["loginForm"]["email"];
@@ -33,13 +34,11 @@
     <title>Login Page</title>
 </head>
 <body>
-<header>
-    <img src="" id="logo"/>
-    <h1 id="websiteTitle">Title of website</h1>
-    <h2 id="websiteSubtitle">subtittle</h2>
-    <span id="headerLinks">LINK TO PAGES HERE</span>
-</header>
+<?php
+include 'php/header.php';
+?>
 <main>
+    <div class="box">
     <div id="loginDiv">
         <form name="loginForm" action="php/login.php" onsubmit="return validateLogin()" method="POST">
         <h1>Login</h1>
@@ -49,7 +48,7 @@
         </form>
         No Account? <a href="registerPage.php"><u>Sign Up!</u></a>
     </div>
-
+    </div>
 </main>
 </body>
 <script src=""></script>

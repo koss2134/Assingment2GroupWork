@@ -1,0 +1,143 @@
+html {
+    	background-image: url(../css/backgrounds/wood.jpg);
+    	background-size: 1400px 10000px;
+}
+
+.box {
+    border: double rgb(229, 180, 73);
+  background-color:  rgba(66, 24, 24,0.5);
+  color: white;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.singlePage {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 100%;
+
+}
+
+.box {
+    border: double rgb(229, 180, 73);
+  background-color:  rgba(66, 24, 24,0.5);
+  color: white;
+  border-radius: 5px;
+  padding: 20px;
+  font-size: 100%;
+}
+
+#galInfo, #genreInfo, #artistInfo, #paintindDiv
+{   
+    
+
+    text-decoration: underline;
+ 
+    font-size: 20px;
+}
+
+img {
+    max-width: 100%;
+
+}
+
+
+
+#paintingList, #paintingInfo {
+    width: 85%;
+    margin-right: 10px;
+
+    
+}
+
+#map
+{
+    margin-top: 40px;
+    background-color: blue;
+}
+
+
+table {
+    color:white;
+}
+
+
+@media only screen and (min-width: 480px) {
+    
+#head {
+    background-color:  rgba(132, 122, 122, 0.5);
+    grid-column: 1 / span 3;
+    grid-row: 1;
+    font-family: 'Notable', sans-serif;
+
+    border-color: black;
+    border: solid;
+  /*width:100%;*/
+/*display :none;*/
+/*visibility: hidden;*/
+/*display :none; vis hidden takes up no space*/
+
+}
+
+
+
+.box {
+    border: double rgb(229, 180, 73);
+  background-color:  rgba(66, 24, 24,0.5);
+  color: white;
+  border-radius: 5px;
+  padding: 20px;
+  font-size: 150%;
+}
+
+
+.singlePage {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+
+    
+}
+
+#galInfo, #genreInfo, #artistInfo, #paintindDiv
+{   
+    height: 100%;
+    text-decoration: underline;
+    grid-column: 1 ;
+    grid-row: 1;  
+    font-size: 20px;
+}
+
+#genreInfo{
+    height: 225%;
+}
+
+#map
+{
+
+    grid-column: 1;
+    grid-row: 2;
+    margin-top: 40px;
+    background-color: blue;
+}
+
+#paintingList, #paintingInfo {
+    height: 148%;
+    margin-right: 10px;
+    grid-column: 2;
+    grid-row: 1 / span 4;
+}
+
+table {
+    color:white;
+}
+
+#artistInfo{
+    height: 230%;
+}
+#paintingDiv{
+    padding-bottom: 140%;
+    height: auto;
+}
+}

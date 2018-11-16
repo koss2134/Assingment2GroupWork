@@ -1,0 +1,22 @@
+html{
+    background-image: url(../css/backgrounds/wood.jpg);
+    background-size: 1400px 10000px;
+    color:white;
+}
+a{
+    color:white;
+}
+#head {
+    border: double rgb(229, 180, 73);
+    grid-column: 1 / span 3;
+    grid-row: 1 / span 10;
+    color:white;
+}
+.box{
+    border: double rgb(229, 180, 73);
+    background-color:  rgba(66, 24, 24,0.5);
+    color: white;
+    border-radius: 5px;
+    padding: 20px;
+    font-size: 100%;
+}

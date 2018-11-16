@@ -1,6 +1,7 @@
 <html lang="en">
 <html>
 <head>
+    <link rel="stylesheet" href="css/default.css">
     <script>
         function validateRegister() {
         var firstName = document.forms["registerForm"]["firstName"];
@@ -63,13 +64,11 @@
     <title>Register Page</title>
 </head>
 <body>
-<header>
-    <img src="" id="logo"/>
-    <h1 id="websiteTitle">Title of website</h1>
-    <h2 id="websiteSubtitle">subtittle</h2>
-    <span id="headerLinks">LINK TO PAGES HERE</span>
-</header
+<?php
+include 'php/header.php';
+?>
 <main>
+    <div class="box">
     <div id="registerDiv">
         <form name="registerForm" action="php/register.php" onsubmit="return validateRegister()" method="POST">
             <h1>Register</h1>
@@ -83,7 +82,7 @@
             <input type="submit" value="Sign Up">
         </form>
     </div>
-
+    </div>
 </main>
 </body>
 <script src=""></script>

@@ -1,16 +1,23 @@
+
+html {
+    	background-image: url(../css/backgrounds/wood.jpg);
+    	background-size: 1400px 10000px;
+    	color:white;
+}
+a { 
+  color:white;
+}
+
 .container {
   display: grid;
   grid-gap: 10px;
-  grid-template-columns: 20rem 25rem auto;
+
   color: #444;
 }
 
-
 #head {
-  grid-column: 1 / span 3;
-    grid-row: 1 / span 4;
-    border-color: black;
-    border: solid;
+      border: double rgb(229, 180, 73);
+
   /*width:100%;*/
 /*display :none;*/
 /*visibility: hidden;*/
@@ -19,10 +26,10 @@
 }
 
 #galleryList {
-  grid-column: 1 / span 1;
-    grid-row: 5 / span 30;
-    border-color: black;
-    border: solid;
+      border: double rgb(229, 180, 73);
+    padding-bottom: 450px;
+    border: double rgb(229, 180, 73);
+ max-height: 230px;
    /* height: 100%*/
   /*width:70%;*/
 /*display :none;*/
@@ -32,10 +39,76 @@
 }
 
 #artistList {
+      border: double rgb(229, 180, 73);
+ max-height: 500px;
+
+ /*max-width: 70%;*/
+    overflow: scroll;
+  /*width:70%;*/
+/*display :none;*/
+/*visibility: hidden;*/
+/*display :none; vis hidden takes up no space*/
+
+}
+#genreList {
+
+    border: double rgb(229, 180, 73);
+   /*max-height: 330px;*/
+ /*max-width: 70%;*/
+    overflow: scroll;
+  /*width:70%;*/
+/*display :none;*/
+/*visibility: hidden;*/
+/*display :none; vis hidden takes up no space*/
+
+}
+
+
+
+@media only screen and (min-width:480px) {
+
+
+
+.container {
+
+  display: grid;
+  grid-gap: 15px;
+  grid-template-columns: 20rem 25rem auto;
+  color: #444;
+}
+
+#head {
+  background-color:  rgba(66, 24, 24,0.5);
+  grid-column: 1 / span 3;
+    grid-row: 1 / span 4;
+        border: double rgb(229, 180, 73);
+  /*width:100%;*/
+/*display :none;*/
+/*visibility: hidden;*/
+/*display :none; vis hidden takes up no space*/
+
+}
+
+#galleryList {
+
+  padding-bottom: 450px;
+  background-color:  rgba(66, 24, 24,0.5);
+  grid-column: 1 / span 1;
+    grid-row: 5 / span 30;
+        border: double rgb(229, 180, 73);
+   /* height: 100%*/
+  /*width:70%;*/
+/*display :none;*/
+/*visibility: hidden;*/
+/*display :none; vis hidden takes up no space*/
+
+}
+
+#artistList {
+  background-color:  rgba(66, 24, 24,0.5);
   grid-column: 2 / span 2;
     grid-row: 5 / span 15;
-    border-color: black;
-    border: solid;
+      border: double rgb(229, 180, 73);
  max-height: 330px;
  /*max-width: 70%;*/
     overflow: auto;
@@ -46,10 +119,10 @@
 
 }
 #genreList {
+  background-color:  rgba(66, 24, 24,0.5);
   grid-column: 2 / span 2;
     grid-row: 20 / span 15;
-    border-color: black;
-    border: solid;
+       border: double rgb(229, 180, 73);
    max-height: 330px;
  /*max-width: 70%;*/
     overflow: auto;
@@ -57,5 +130,8 @@
 /*display :none;*/
 /*visibility: hidden;*/
 /*display :none; vis hidden takes up no space*/
+
+}
+/*end of desktop css*/
 
 }
