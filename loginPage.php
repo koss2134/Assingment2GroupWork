@@ -30,7 +30,6 @@
         }
     </script>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="css/index.css">
     <title>Login Page</title>
 </head>
 <body>

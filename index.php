@@ -27,7 +27,7 @@ try {
  $pdo = new PDO(DBCONNSTRING,DBUSER,DBPASS);
  $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
- $sql = "SELECT GalleryID, GalleryName FROM Galleries";
+ $sql = "SELECT GalleryID, GalleryName FROM Galleries ORDER BY GalleryName";
  $result = $pdo->query($sql);
 //$num_rows = mysql_num_rows($result);
 //$number_of_rows = $result->rowCount();
@@ -47,7 +47,7 @@ catch (PDOException $e) {
  die( $e->getMessage() );
 }
   ?>
-  <a href = "singlePaintingPage.php?PaintingID=">TEST LINK FOR PAINTING</a>
+  <!--a href = "singlePaintingPage.php?PaintingID=">TEST LINK FOR PAINTING</a-->
     </div>
     <div id="artistList"><!-- max-height: 1%; -->
 <?php  
@@ -61,15 +61,16 @@ try {
  $sql = "SELECT Artists.ArtistID,Firstname, LastName,ImageFileName  
          FROM Artists,Paintings 
          WHERE Artists.ArtistID =Paintings.ArtistID
-         Group by Artists.ArtistID";
+         Group BY Artists.ArtistID
+         ORDER BY LastName";
  $result = $pdo->query($sql);
 
 //echo "test!!!!!!!!!!!!!!!!!";
 
  while ($row = $result->fetch()) {
 echo "<div style='float: right;'>";
-         
-      echo "<div > <img src='images/1.jpg'></div>"; 
+         //echo"imagefileName:----------- ". $row['ImageFileName'] ."  ----------------";
+      echo "<div > <img width=100 height=100 src='images/paintings/square/". $row['ImageFileName'] .".jpg'></div>"; 
       echo " <div> <A href='singleArtistPage.php?ArtistID=". $row['ArtistID'] ."'>". $row['FirstName'] . $row['LastName'] . "</a> </div> ";
   
 echo " </div>";
@@ -98,7 +99,10 @@ try {
  while ($row = $result->fetch()) {
 
 echo "<div style='float: right;'>";
-  echo "<div><img src='images/1.jpg'></div>";
+// width=100 height=100 src='images/paintings/square/";
+
+//echo "--------------------------------filename::". $row['ImageFileName'];
+  echo "<div><img width=100 height=100 src='images/genres/".$row['GenreID'].".jpg'></div>";
   echo " <div> <A href='singleGenrePage.php?GenreID=". $row['GenreID'] ."'>" . $row['GenreName'] . "</a> </div> ";
 echo "</div>";
  }

@@ -14,7 +14,7 @@ include 'php/header.php';
     <div class="box">
         <h1>Favorites</h1>
         <div id=tableDiv>
-            <form id="favoritesForm">
+            <form id="favoritesForm" method="post" action="php/favorites.php">
                 <table id="favoritesTable">
                 <tr>
                     <td>IMG</td>
@@ -33,7 +33,8 @@ include 'php/header.php';
                 </table>
             </form>
         </div>
-        <h1>Remove All</h1>
+        <button type="submit" value="" form="favoritesForm">Remove All</button> 
+        
     </div>
 </main>
 </body>

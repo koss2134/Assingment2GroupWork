@@ -60,7 +60,6 @@
         }
     </script>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="css/index.css">
     <title>Register Page</title>
 </head>
 <body>

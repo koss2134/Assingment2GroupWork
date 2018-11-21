@@ -1,3 +1,7 @@
+<?php
+require_once 'config.inc.php';
+?>
+
 <html lang="en">
 <html>
 <head>
@@ -16,18 +20,25 @@ include 'php/header.php';
     <div id="genreInfo" class = 'box'>
         
         <h2>Genre Info</h2>
+
+<?php  
+include('services/genre.php');
+
+$row = getGenre();
         
-        <label>Genre Name:</label><br>
-        <div id = 'genreName'></div><br>
-        <div id = ''>PHP will generate this image</div><br>
-        <label>Era:</label><br>
-        <span id = 'genreEra'></span><br>
-        <label>Description:</label><br>
-        <span id = 'genreEra'></span><br>
-        <label>Link:</label><br>
-        <a hrf ='' id = 'genreWebsite'>Link</a><br>
-    </div>
-    
+    echo "<label>Genre Name:</label><br>";
+    echo "<div id = 'genreName'>". $row['GenreName'] ."</div><br>";
+    echo "<div id = ''>PHP will generate this image</div><br>";
+    echo "<label>Era:</label><br>";
+    echo "<span id = 'genreEra'>". $row['EraName'] ."</span><br>";
+    echo "<label>Description:</label>". $row['Description'] ."<br>";
+    echo "<span id = 'genreEra'>". $row['EraName'] ."</span><br>";
+    echo "<label>Link:</label>";
+    echo "<a href ='". $row['Link'] ."' >". $row['GenreName'] ." on wikipedia</a><br>";
+    echo "</div>";
+
+?>
+
     <div id = 'paintingList' class = 'box'>
                 <table  style="width:100%">
                     
@@ -44,11 +55,43 @@ include 'php/header.php';
                         <td>artist</td>
                         <td>year</td>
                     </tr><hr>
-                
-                </table>
-                this is the table we will use php to generate all the paintings 
+                    <!-- artist info -->
+                    
+<?php  
+// output all the retrieved galleries (hint: set value attribute of <option> to the GalleryID field)
+
+define('DBCONNSTRING',"mysql:host=" . DBHOST . ";dbname=" . DBNAME .";charset=utf8mb4;");
+    try {
+        $pdo = new PDO(DBCONNSTRING,DBUSER,DBPASS);
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        
+        $sql = "SELECT * FROM Genres,Paintings,PaintingGenres 
+                 WHERE Genres.GenreID =".$_GET['GenreID']." 
+                 AND Genres.GenreID = PaintingGenres.GenreID 
+                 AND  PaintingGenres.PaintingID = Paintings.PaintingID";
+                 
+        $result = $pdo->query($sql);
+    
+        while ($row = $result->fetch()) {
+            echo " <tr>";
+            echo "<td><a href=singlePaintingPage.php?PaintingID=".$row['PaintingID']."><img width=100 height=100 src='images/paintings/square/". $row['ImageFileName'].".jpg'></a></td>";
+            echo "<td><a href=singlePaintingPage.php?PaintingID=".$row['PaintingID'].">".$row['Title']."</a></td>";
+            echo "<td>".$row['FirstName']." ".$row['LastName']."</td>";                   
+            echo "<td>".$row['YearOfWork']."</td>";
+            echo "</tr>";
+                        
+        }
+     
+    }
+    catch (PDOException $e) {
+        die( $e->getMessage() );
+    }
+ ?>
+        </table>
     </div>
+<hr>
 </main>
+
 </body>
 <script src=""></script>
 </html>
