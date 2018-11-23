@@ -54,7 +54,7 @@ $row = getGenre();
                         <td>title</td>
                         <td>artist</td>
                         <td>year</td>
-                    </tr><hr>
+                    </tr>
                     <!-- artist info -->
                     
 <?php  
@@ -89,7 +89,6 @@ define('DBCONNSTRING',"mysql:host=" . DBHOST . ";dbname=" . DBNAME .";charset=ut
  ?>
         </table>
     </div>
-<hr>
 </main>
 
 </body>

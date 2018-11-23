@@ -14,9 +14,7 @@ function sqlQuery ($sql) {
     }
     catch (PDOException $e){
         die( $e->getMessage() );
-        return "";
     }
-    return "";
 }
 function createPDO (){
     try{
@@ -28,4 +26,6 @@ function createPDO (){
         die( $e->getMessage() );
     }
 }
+
+
 ?>

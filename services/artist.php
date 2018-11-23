@@ -1,30 +1,17 @@
 <?php 
-require_once 'config.inc.php';
+require_once "php/databaseIncude.php";
+header('Content-Type: application/json');
 
-define('DBCONNSTRING',"mysql:host=" . DBHOST . ";dbname=" . DBNAME .";charset=utf8mb4;");
-
-function getArtist() {
-    try {
-     $pdo = new PDO(DBCONNSTRING,DBUSER,DBPASS);
-     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-     
-     if(isset ($_GET['ArtistID'])){
+    if(isset ($_GET['ArtistID'])){
          $sql = "SELECT * FROM Artists WHERE ArtistID =".$_GET['ArtistID'];
         }
-        else {
-            $sql = "SELECT * FROM Artits";
-        }
-    $result = $pdo->query($sql);
-
-    $result = $pdo->query($sql);
+    else {
+        $sql = "SELECT * FROM Artits";
+    }
+    $result = sqlQuery($sql);
     $data = $result->fetch();
     
-    return $data;
-    }
-    
-    catch (PDOException $e) {
-        die( $e->getMessage() );
-    }
+    $jsonData = json_encode($data);
+    echo $jsonData;
 
-}
 ?>

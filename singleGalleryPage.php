@@ -23,8 +23,8 @@ include 'php/header.php';
      <div id = 'galInfo' class = 'box'>
          
 <?php  
-include("services/gallery.php");
-$row = getGallery();
+//include("services/gallery.php");
+//$row = getGallery();
 
          
                 echo "<h2>".$row['GalleryName']."</h2>";
@@ -51,7 +51,49 @@ $row = getGallery();
     </div>
     
     <div id = 'map' class = 'box'>
-        MAP this is where the map will be generated using JS
+        MAP__ this is where the map will be generated using JS
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDI2c5LYu9mZc58uEl7-B7hjcsUYAFzXAA&callback=initMap" type="text/javascript"></script>
+
+
+<?php 
+echo "<script> var lati=".$row['Latitude']."; var long=".$row['Longitude'].";
+
+
+</script>";
+?>
+
+
+<script>
+//lati = 30;
+//long = 30;
+//I ADDED A FILE IN js THAT HAS THE MAP FUNCTIONS I USED FROM MY ASSINGMENT 1 IF YOU WANT TO USE THOSE MIKE - James
+var map;
+function initMap() {
+map = new google.maps.Map(document.getElementById("map"), {
+// map = new google.maps.Map(document.querySelector(".d"), {
+
+
+
+center: {lat: lati, lng: long},
+ // center: {lat: 41.89474, lng: 12.4839},
+ 
+ 
+//mapTypeId: 'satellite',
+ zoom: 5
+ });
+ map.setTilt(45);
+}
+
+
+map.setCenter(new google.maps.LatLng(lati, long));
+
+
+
+</script>
+
+        
+        
+        
     </div>
     
     <div id = 'paintingList' class = 'box'>
