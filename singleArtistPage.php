@@ -56,12 +56,15 @@ $row = json_decode($jsondata);
     <div id = 'paintingList' class = 'box'>
         <table id = 'paintingTable' style="width:100%">
             <script src="js/paitingTable.js">
-            var ID = <?php echo $currentArtist; ?>;
-            generatePaintingTable();
+            //HERE IS WHERE I AM HAVING ISSUES!
+            //var ID = <?php echo $currentArtist; ?>;
+            //Then i am obviosuly missing something clear because it won't allow the next commands to commence.
+            //console.log(ID);
+            //generatePaintingTable();
             </script>
         </table>
             
 </main>
 </body>
-<script src="js/paitingTable.js"></script>
+<script src=""></script>
 </html>

@@ -1,5 +1,5 @@
 <?php 
-require_once "php/databaseIncude.php";
+include_once __DIR__.'/../php/databaseIncude.php';
 header('Content-Type: application/json');
      
     if(isset ($_GET['GalleryID'])){

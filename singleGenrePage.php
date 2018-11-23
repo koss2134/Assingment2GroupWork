@@ -22,7 +22,7 @@ include 'php/header.php';
         <h2>Genre Info</h2>
 
 <?php  
-include('services/genre.php');
+require_once 'services/genre.php';
 
 $row = getGenre();
         

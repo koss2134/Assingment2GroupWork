@@ -1,17 +1,16 @@
 window.addEventListener('load', function() {
 	
 	const paiUrl = 'services/painting.php?ArtistID=';
-	var ID;
+	var ID =97; //temp
 	var paiInfo = [];
 	var sortedP = [];
 	function generatePaintingTable () {
 		var url = paiUrl + ID;
-		fetch(url)
+		window.fetch(url)
 			.then ( reposnse => reposnse.json())
 			.then ((data) => {
 				paiInfo = data;
 				sortPaintings("Title");
-				console.log(sortedP);
 				fillPList();
 			})
 			.catch (error => console.log(error));
@@ -75,4 +74,5 @@ window.addEventListener('load', function() {
 		}
 		p.appendChild(tr);
 	}
+	generatePaintingTable();
 });

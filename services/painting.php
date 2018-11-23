@@ -1,12 +1,13 @@
 <?php 
-include '../php/databaseIncude.php';
+//include_once '../php/databaseIncude.php';
+include_once __DIR__.'/../php/databaseIncude.php';
 header('Content-Type: application/json');
 
     if(isset($_GET["PaintingID"])){
         $sql = "SELECT * FROM Paintings,Artists WHERE Paintings.PaintingID=".$_GET['PaintingID'] . " AND Artists.ArtistID = Paintings.ArtistID";
     }
     else if (isset($_GET["ArtistID"])){
-        $sql = "SELECT * FROM Paintings,Artists WHERE Paintings.ArtistID =".$_GET["ArtistID"] . " AND Paintings.ArtistID = Artists.ArtistID";
+        $sql = "SELECT * FROM Paintings INNER JOIN Artists ON Paintings.ArtistID = Artists.ArtistID WHERE Paintings.ArtistID=" . $_GET["ArtistID"];
     }
     else if (isset($_GET["GalleryID"])){
         $sql = "SELECT * FROM Paintings WHERE GalleryID =".$_GET["GalleryID"];
