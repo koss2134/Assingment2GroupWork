@@ -40,12 +40,51 @@ include 'php/header.php';
     <div class="box">
     <div id="loginDiv">
         <form name="loginForm" action="php/login.php" onsubmit="return validateLogin()" method="POST">
-        <h1>Login</h1>
-        Email: <input type="text" name="email"><br/>
-        Pass: <input type="text" name="pass"><br/>
+            
+       <table>
+        <TR>
+            <td>            
+                <h1>Login</h1>
+            </td>
+            <td>            
+
+            </td>
+        </tr>
+        <TR>
+            <td>            
+            Email:           
+        </td>
+            <td>            
+         <input type="text" name="email">
+             </td>
+        </tr>
+
+        <TR>
+            <td>            
+        Pass:
+            </td>
+            <td>            
+        <input type="text" name="pass">
+                     </td>
+        </tr>
+        <TR>
+            <td>            
+            </td>
+            <td>            
         <input type="submit" value="submit">
+            </td>
+        </tr>
+
         </form>
+        <TR>
+            <td>            
+            </td>
+            <td>            
         No Account? <a href="registerPage.php"><u>Sign Up!</u></a>
+
+            </td>
+        </tr>
+        
     </div>
     </div>
 </main>

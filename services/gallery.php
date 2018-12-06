@@ -9,7 +9,7 @@ header('Content-Type: application/json');
         $sql = "SELECT * FROM Galleries";
     }
     $result = sqlQuery($sql);
-    $data = $result->fetch();
+    $data = $result->fetchAll();
     
     $jsonData = json_encode($data);
     echo $jsonData;

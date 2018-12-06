@@ -1,9 +1,31 @@
+
 <?php
 require_once 'config.inc.php';
+
+function createGenreInfo(){
+            
+    echo "<label>Genre Name:</label><br>";
+    echo "<div id='genreName'></div><br>";
+    echo "<div>PHP will generate this image</div><br>";
+    echo "<label>Era:</label><br>";
+    echo "<span id='genreEra'></span><br>";
+    echo "<label>Description:</label><br>";
+    echo "<span id='genreDesc'></span><br>";
+    echo "<label>Link:</label>";
+    echo "<a href ='' id = 'link'> on wikipedia</a><br>";
+    echo "</div>";
+
+}
+
+$genreID = $_GET["GenreID"];
+echo "<script type = 'text/javascript'> var type = 'genre' </script>"; 
+echo "<script type = 'text/javascript'> var genreID = $genreID </script>"; 
+echo "<script type = 'text/javascript' src = 'js/genreServices.js'></script>";
+echo "<script type = 'text/javascript' src = 'js/paintingList.js'></script>";
 ?>
 
 <html lang="en">
-<html>
+
 <head>
     <meta charset="utf-8">
         <meta name="viewport" content="width=device-width; initial-scale=1.0;">
@@ -22,75 +44,24 @@ include 'php/header.php';
         <h2>Genre Info</h2>
 
 <?php  
-require_once 'services/genre.php';
-
-$row = getGenre();
-        
-    echo "<label>Genre Name:</label><br>";
-    echo "<div id = 'genreName'>". $row['GenreName'] ."</div><br>";
-    echo "<div id = ''>PHP will generate this image</div><br>";
-    echo "<label>Era:</label><br>";
-    echo "<span id = 'genreEra'>". $row['EraName'] ."</span><br>";
-    echo "<label>Description:</label>". $row['Description'] ."<br>";
-    echo "<span id = 'genreEra'>". $row['EraName'] ."</span><br>";
-    echo "<label>Link:</label>";
-    echo "<a href ='". $row['Link'] ."' >". $row['GenreName'] ." on wikipedia</a><br>";
-    echo "</div>";
-
+createGenreInfo();
 ?>
 
-    <div id = 'paintingList' class = 'box'>
-                <table  style="width:100%">
-                    
+<div id = 'paintingList' class = 'box'>
+        
+                <table  style="width:100%" id = 'paintTable'>
                      <tr>
                          <th> </th>
                          <th id = 'headingArtist'>Artist</th>
                          <th id = 'headingTitle'>Title</th>
                          <th id = 'year'>Year</th>
                     </tr>
-                    
-                    <tr>
-                        <td>img</td>
-                        <td>title</td>
-                        <td>artist</td>
-                        <td>year</td>
-                    </tr>
-                    <!-- artist info -->
-                    
-<?php  
-// output all the retrieved galleries (hint: set value attribute of <option> to the GalleryID field)
 
-define('DBCONNSTRING',"mysql:host=" . DBHOST . ";dbname=" . DBNAME .";charset=utf8mb4;");
-    try {
-        $pdo = new PDO(DBCONNSTRING,DBUSER,DBPASS);
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        
-        $sql = "SELECT * FROM Genres,Paintings,PaintingGenres 
-                 WHERE Genres.GenreID =".$_GET['GenreID']." 
-                 AND Genres.GenreID = PaintingGenres.GenreID 
-                 AND  PaintingGenres.PaintingID = Paintings.PaintingID";
-                 
-        $result = $pdo->query($sql);
-    
-        while ($row = $result->fetch()) {
-            echo " <tr>";
-            echo "<td><a href=singlePaintingPage.php?PaintingID=".$row['PaintingID']."><img width=100 height=100 src='images/paintings/square/". $row['ImageFileName'].".jpg'></a></td>";
-            echo "<td><a href=singlePaintingPage.php?PaintingID=".$row['PaintingID'].">".$row['Title']."</a></td>";
-            echo "<td>".$row['FirstName']." ".$row['LastName']."</td>";                   
-            echo "<td>".$row['YearOfWork']."</td>";
-            echo "</tr>";
-                        
-        }
-     
-    }
-    catch (PDOException $e) {
-        die( $e->getMessage() );
-    }
- ?>
+                    
+
         </table>
     </div>
 </main>
 
 </body>
-<script src=""></script>
 </html>

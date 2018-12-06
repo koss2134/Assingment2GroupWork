@@ -1,7 +1,7 @@
 <?php
 
 require_once 'config.inc.php';
-
+//echo "<H1>".getcwd() . "</H1>\
 ?>
 
 <link rel="stylesheet" href="css/index.css">
@@ -65,8 +65,16 @@ try {
          ORDER BY LastName";
  $result = $pdo->query($sql);
 
-//echo "test!!!!!!!!!!!!!!!!!";
 
+//echo "<div max-width:980px; overflow-x: scroll'>";
+//echo "<div style='overflow: scroll;'>";
+
+//echo "<div style='overflow: horizontal;'>";
+//echo "<div style='overflow: scroll;'>";
+
+//echo "<div style='overflow-x: scroll;'>";
+
+//echo "<div style='width:300px;height:200px;overflow-x:auto;-ms-overflow-x:auto;overflow-y:hidden;-ms-overflow-y:hidden;'>";
  while ($row = $result->fetch()) {
 echo "<div style='float: right;'>";
          //echo"imagefileName:----------- ". $row['ImageFileName'] ."  ----------------";
@@ -75,6 +83,7 @@ echo "<div style='float: right;'>";
   
 echo " </div>";
  }
+//echo "</div'>";
 
 
 }

@@ -1,7 +1,7 @@
 window.addEventListener('load', function() {
 	
 	const paiUrl = 'services/painting.php?ArtistID=';
-	var ID =97; //temp
+	var ID = null; //temp
 	var paiInfo = [];
 	var sortedP = [];
 	function generatePaintingTable () {

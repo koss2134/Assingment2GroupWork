@@ -1,7 +1,33 @@
 <?php
-
 require_once 'config.inc.php';
 
+function createArtistInfo(){
+    
+        echo " <label>Artist Name:</label><br>";
+        echo "<div id = 'artistName'></div><br>";
+        echo "<div id = ''>PHP will generate image of artist</div><br>";
+        echo "<label>Nationality:</label> <br>";
+        echo "<span id = 'nationality'></span><br>";
+        echo "<label>Gender:</label><br>";
+        echo "<span id = 'artistGender'></span><br>";
+        echo "<label>Year of Birth:</label><br>";
+        echo "<span id = 'artistYOB'></span><br>";
+        echo "<label>Details:</label><br>";
+        echo "<span id = 'artistDetails'></span><br>";
+        echo "  <label>Link: </label> ";        
+        echo "<a href ='' id = 'artistWebsite'></a><br>";
+        
+        
+    echo "</div>";
+
+    
+}
+
+$artistID = $_GET["ArtistID"];
+echo "<script type = 'text/javascript'> var type = 'artist' </script>"; 
+echo "<script type = 'text/javascript'> var artistID = $artistID </script>"; 
+echo "<script type = 'text/javascript' src = 'js/artistServices.js'></script>";
+echo "<script type = 'text/javascript' src = 'js/paintingList.js'></script>";
 ?>
 
 <html lang="en">
@@ -21,48 +47,20 @@ include 'php/header.php';
 
 <!-- artist info -->
 <?php  
-// output all the retrieved galleries (hint: set value attribute of <option> to the GalleryID field)
-$currentArtist = $_GET['ArtistID']; //This is required for the second section with java aswell so do not remove!
-
-$http = curl_init("services/artist.php?ArtistID=$currentArtist");
-curl_setopt($http, CURLOPT_HEADER, false); 
-curl_setopt($http, CURLOPT_RETURNTRANSFER, true); 
-curl_setopt($http, CURLOPT_SSL_VERIFYPEER, false); 
-$jsondata = curl_exec($http);
-$status_code = curl_getinfo($http, CURLINFO_HTTP_CODE);
-curl_close($http);
-$row = json_decode($jsondata);
-        echo "<div>$row->ArtistID</div>";
-        echo " <label>Artist Name:</label><br>";
-        echo "<div id = 'ArtistName'>".$row['FirstName']." ". $row['LastName'] ."</div><br>";
-        echo "<div id = ''>PHP will generate image of artist</div><br>";
-        echo "<label>Nationality:</label> <br>";
-        echo "<span id = 'nationality'>".$row->Nationality."</span><br>";
-        echo "<label>Gender:</label><br>";
-        echo "<span id = 'artistGender'>".$row['Gender']."</span><br>";
-        echo "<label>Year of Birth:</label><br>";
-        echo "<span id = 'artistYOB'>".$row['YearOfBirth']."</span><br>";
-        echo "<label>Details:</label><br>";
-        echo "<span id = 'artistDetails'>".$row['Details']."</span><br>";
-                  echo "  <label>Link: </label> ";        
-        echo "<a href ='".$row['ArtistLink']."' id = 'artistWebsite'>".$row['ArtistLink']."</a><br>";
-        
-        
-    echo "</div>";
+createArtistInfo();
 
   ?>
 
 
     <div id = 'paintingList' class = 'box'>
-        <table id = 'paintingTable' style="width:100%">
-            <script src="js/paitingTable.js">
-            //HERE IS WHERE I AM HAVING ISSUES!
-            //var ID = <?php echo $currentArtist; ?>;
-            //Then i am obviosuly missing something clear because it won't allow the next commands to commence.
-            //console.log(ID);
-            //generatePaintingTable();
-            </script>
-        </table>
+        
+                <table  style="width:100%" id = 'paintTable'>
+                     <tr>
+                         <th> </th>
+                         <th id = 'headingArtist'>Artist</th>
+                         <th id = 'headingTitle'>Title</th>
+                         <th id = 'year'>Year</th>
+                    </tr>
             
 </main>
 </body>

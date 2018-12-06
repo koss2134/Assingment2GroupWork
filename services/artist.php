@@ -4,12 +4,12 @@ header('Content-Type: application/json');
 
     if(isset ($_GET['ArtistID'])){
          $sql = "SELECT * FROM Artists WHERE ArtistID =".$_GET['ArtistID'];
-        }
+    }
     else {
-        $sql = "SELECT * FROM Artits";
+        $sql = "SELECT * FROM Artists";
     }
     $result = sqlQuery($sql);
-    $data = $result->fetch();
+    $data = $result->fetchAll();
     
     $jsonData = json_encode($data);
     echo $jsonData;

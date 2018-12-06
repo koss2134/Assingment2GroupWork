@@ -70,15 +70,76 @@ include 'php/header.php';
     <div class="box">
     <div id="registerDiv">
         <form name="registerForm" action="php/register.php" onsubmit="return validateRegister()" method="POST">
-            <h1>Register</h1>
-            First Name: <input type="text" name="firstName"><br/>
-            Last Name: <input type="text" name="lastName"><br/>
-            City: <input type="text" name="city"><br/>
-            Country: <input type="text" name="country"><br/>
-            Email: <input type="text" name="email"><br/>
-            Password: <input type="text" name="pass"><br/>
-            Confirm Password: <input type="text" name="passConfirm"><br/>
+        <table>
+        <TR>
+            <td>    <h1>Register</h1></td>
+            <td></td>
+        </TR>
+        <TR>        
+            <td>
+            First Name:
+            </td>
+            <td>
+            <input type="text" name="firstName">
+            </td>
+        </TR>
+        <TR>        
+            <td>
+                        Last Name:
+            </td>
+            <td>
+            <input type="text" name="lastName"><br/>
+            </td>
+        </TR>
+        <TR>        
+            <td>
+
+            City:
+            </td>
+            <td>
+                 <input type="text" name="city">
+            </td>
+        </TR>
+        <TR>        
+            <td>
+            Country:
+            </td>
+            <td>
+                <input type="text" name="country"><br/>
+            </td>
+        </TR>
+        <TR>        
+            <td>
+            Email:
+            </td>
+            <td>
+                <input type="text" name="email">
+            </td>
+        </TR>
+        <TR>        
+            <td>
+            Password:
+            </td>
+            <td>
+                 <input type="password" name="pass">
+            </td>
+        </TR>
+        <TR>        
+            <td>
+            Confirm Password:
+            </td>
+            <td>
+                <input type="password" name="passConfirm">
+            </td>
+        </TR>
+        <TR>        
+            <td>
+            </td>
+            <td>
             <input type="submit" value="Sign Up">
+            </td>
+        </TR>
+        </table>    
         </form>
     </div>
     </div>

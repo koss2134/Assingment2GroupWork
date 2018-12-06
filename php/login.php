@@ -1,7 +1,9 @@
 <?php
+include_once __DIR__.'/../php/databaseIncude.php';
+
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     if(isset($_POST['email']) && isset($_POST['pass'])){
-        if(checkEmail($_POST["email"]) == true && checkPassword($_POST["pass"]) == true){
+        if(checkLogin() == true){
             $_SESSION["status"] = true;
             $_SESSION["email"] = $_POST["email"];
             $_SESSION["pass"] = $_POST["pass"];
@@ -12,15 +14,32 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         }
     }
 }
-function checkEmail($email){
-    if($email == 'koss@123.com'){
-        return true;
+function checkLogin (){
+    try {
+        $pdo = createPDO();
+        $sql = 'SELECT * FROM CustomerLogon WHERE UserName=:email';
+        $email = $_POST['email'];
+        $statement = $pdo->prepare($sql);
+        $statement->bindValue(':email', $email);
+        $statement->execute();
+        foreach($statement as $row) {
+            if($row['UserName'] == $_POST['email']){
+                $hashed_pass = md5($_POST['pass'] . $row['Salt']);
+                if($row['Pass'] == $hashed_pass){
+                     return true;
+                }
+                else {
+                    return false;
+                }
+            }
+            else{
+                return false;
+            } 
+        }
+        $pdo = null;
     }
-    return false;
-}
-function checkPassword($pass){
-    if($pass == 1234){
-        return true;
+    catch (PDOException $e){
+        die( $e->getMessage());
     }
     return false;
 }
