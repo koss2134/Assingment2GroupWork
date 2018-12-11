@@ -1,0 +1,29 @@
+#loginDiv, #registerDiv{
+  margin: auto;
+  width: 50%;
+  margin-top:19%;
+  margin-bottom:19%;
+  padding: 10px;
+}
+
+#loginDiv{
+  margin-top:25%;
+  margin-bottom:22%;
+}
+
+#loginHeader , #registerHeader{
+    font-size: 50px;
+}
+
+#loginTable, #registerTable{
+    border: double rgb(229, 180, 73);
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    background-color: rgba(112, 103, 79, 0.7);
+    box-shadow: 5px 10px 8px #1b1b1c;
+}
+
+#emailLabel, #passwordLabel, .label{
+    font-size: 20px;
+}

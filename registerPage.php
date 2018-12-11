@@ -70,13 +70,14 @@ include 'php/header.php';
     <div class="box">
     <div id="registerDiv">
         <form name="registerForm" action="php/register.php" onsubmit="return validateRegister()" method="POST">
-        <table>
+        <table id = 'registerTable'>
+        <link rel="stylesheet" href="css/login.css">
         <TR>
-            <td>    <h1>Register</h1></td>
+            <td>    <h1 id  = 'registerHeader'>Register</h1></td>
             <td></td>
         </TR>
         <TR>        
-            <td>
+            <td class = 'label'>
             First Name:
             </td>
             <td>
@@ -84,7 +85,7 @@ include 'php/header.php';
             </td>
         </TR>
         <TR>        
-            <td>
+            <td class = 'label'>
                         Last Name:
             </td>
             <td>
@@ -92,7 +93,7 @@ include 'php/header.php';
             </td>
         </TR>
         <TR>        
-            <td>
+            <td class = 'label'>
 
             City:
             </td>
@@ -101,7 +102,7 @@ include 'php/header.php';
             </td>
         </TR>
         <TR>        
-            <td>
+            <td class = 'label'>
             Country:
             </td>
             <td>
@@ -109,7 +110,7 @@ include 'php/header.php';
             </td>
         </TR>
         <TR>        
-            <td>
+            <td class = 'label'>
             Email:
             </td>
             <td>
@@ -117,7 +118,7 @@ include 'php/header.php';
             </td>
         </TR>
         <TR>        
-            <td>
+            <td class = 'label'>
             Password:
             </td>
             <td>
@@ -125,7 +126,7 @@ include 'php/header.php';
             </td>
         </TR>
         <TR>        
-            <td>
+            <td class = 'label'>
             Confirm Password:
             </td>
             <td>

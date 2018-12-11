@@ -31,7 +31,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 //This function adds the new user to both tables in the database.
 function addNewUser() {
     try{
-        //Adding to CustomerLogon
+        //Adding to CustomerLogon first to generate ID in table.
         $pdo = createPDO();
         $sql = "INSERT INTO CustomerLogon (UserName, Pass, Salt) VALUES (?, ?, ?)";
         $statement = $pdo->prepare($sql);

@@ -11,58 +11,60 @@ a {
 .container {
   display: grid;
   grid-gap: 10px;
-
+  padding-top:5px;
   color: #444;
 }
 
 #head {
       border: double rgb(229, 180, 73);
-
-  /*width:100%;*/
-/*display :none;*/
-/*visibility: hidden;*/
-/*display :none; vis hidden takes up no space*/
-
 }
 
 #galleryList {
-      border: double rgb(229, 180, 73);
-    padding-bottom: 450px;
     border: double rgb(229, 180, 73);
- max-height: 230px;
-   /* height: 100%*/
-  /*width:70%;*/
-/*display :none;*/
-/*visibility: hidden;*/
-/*display :none; vis hidden takes up no space*/
-
+    padding-bottom: 610px;
+    font-size: 19px;
+    max-height: 255px;
+    list-style-type: none;
+    padding-left: 10px;
 }
 
 #artistList {
-      border: double rgb(229, 180, 73);
- max-height: 500px;
-
- /*max-width: 70%;*/
-    overflow: scroll;
-  /*width:70%;*/
-/*display :none;*/
-/*visibility: hidden;*/
-/*display :none; vis hidden takes up no space*/
-
+    border: double rgb(229, 180, 73);
+    max-height: 400px;
+    display: inline-block;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space:nowrap;
+        padding-top: 50px;
 }
 #genreList {
 
     border: double rgb(229, 180, 73);
-   /*max-height: 330px;*/
- /*max-width: 70%;*/
-    overflow: scroll;
-  /*width:70%;*/
-/*display :none;*/
-/*visibility: hidden;*/
-/*display :none; vis hidden takes up no space*/
-
+    display: inline-block;
+    overflow:auto;
+    white-space:nowrap;
+    padding-top: 65px;
 }
 
+.indexHeading{
+  color: rgb(229, 180, 73);
+  font-size: 30px;
+  margin-left: 10px;
+}
+
+#artistIndexList{
+    float: right;
+    overflow: auto;
+}
+
+.singleArtist, .singleGenre{
+  padding-left: 17px;
+  padding-right: 17px;
+  display: block;
+  max-width: 150px;
+  float: right;  
+  
+}
 
 
 @media only screen and (min-width:480px) {
@@ -73,7 +75,7 @@ a {
 
   display: grid;
   grid-gap: 15px;
-  grid-template-columns: 20rem 25rem auto;
+  grid-template-columns: 20rem 20px auto;
   color: #444;
 }
 
@@ -82,55 +84,57 @@ a {
   grid-column: 1 / span 3;
     grid-row: 1 / span 4;
         border: double rgb(229, 180, 73);
-  /*width:100%;*/
-/*display :none;*/
-/*visibility: hidden;*/
-/*display :none; vis hidden takes up no space*/
 
 }
 
 #galleryList {
 
-  padding-bottom: 450px;
   background-color:  rgba(66, 24, 24,0.5);
   grid-column: 1 / span 1;
-    grid-row: 5 / span 30;
-        border: double rgb(229, 180, 73);
-   /* height: 100%*/
-  /*width:70%;*/
-/*display :none;*/
-/*visibility: hidden;*/
-/*display :none; vis hidden takes up no space*/
+  grid-row: 1 / span 30;
+  border: double rgb(229, 180, 73);
 
 }
 
 #artistList {
   background-color:  rgba(66, 24, 24,0.5);
   grid-column: 2 / span 2;
-    grid-row: 5 / span 15;
-      border: double rgb(229, 180, 73);
- max-height: 330px;
- /*max-width: 70%;*/
-    overflow: auto;
-  /*width:70%;*/
-/*display :none;*/
-/*visibility: hidden;*/
-/*display :none; vis hidden takes up no space*/
-
+  grid-row: 1 / span 15;
+  border: double rgb(229, 180, 73);
+  max-height: 540px;
+  overflow: auto;
 }
 #genreList {
   background-color:  rgba(66, 24, 24,0.5);
   grid-column: 2 / span 2;
-    grid-row: 20 / span 15;
-       border: double rgb(229, 180, 73);
-   max-height: 330px;
- /*max-width: 70%;*/
-    overflow: auto;
-  /*width:70%;*/
-/*display :none;*/
-/*visibility: hidden;*/
-/*display :none; vis hidden takes up no space*/
+  grid-row: 16 / span 15;
+  border: double rgb(229, 180, 73);
+  max-height: 190px;
+  overflow: auto;
+}
 
+#artistHeading{
+  grid-column: 2;
+  grid-row: 1 /span 15;
+}
+
+#genreHeading{
+  grid-column: 2;
+  grid-row: 16/ span 15;
+}
+
+#artistIndexList{
+    float: right;
+    overflow: auto;
+}
+
+.singleArtist, .singleGenre{
+  padding-left: 17px;
+  padding-right: 17px;
+  display: block;
+  max-width: 150px;
+  float: right;  
+  
 }
 /*end of desktop css*/
 

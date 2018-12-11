@@ -29,31 +29,26 @@ html {
 
 #galInfo, #genreInfo, #artistInfo, #paintindDiv
 {   
-    
+    text-decoration: none;
 
-    text-decoration: underline;
+
  
     font-size: 20px;
 }
 
 img {
-    max-width: 100%;
+    max-width: 95%;
 
 }
 
 
 
 #paintingList, #paintingInfo {
-    width: 85%;
+    width: 90%;
     margin-right: 10px;
+    overflow: scroll;
 
     
-}
-
-#map
-{
-    margin-top: 40px;
-    background-color: blue;
 }
 
 
@@ -61,8 +56,21 @@ table {
     color:white;
 }
 
+#addToFavs, #seeFavs{
+    color: rgb(229, 180, 73);
+}
+
+.color{
+    display:inline-block;
+    width:20px;
+    height:20px;
+    margin: 5px;
+}
+    
+
 
 @media only screen and (min-width: 480px) {
+/*--------------------------------------------------------------------------*/    
     
 #head {
     background-color:  rgba(132, 122, 122, 0.5);
@@ -72,17 +80,12 @@ table {
 
     border-color: black;
     border: solid;
-  /*width:100%;*/
-/*display :none;*/
-/*visibility: hidden;*/
-/*display :none; vis hidden takes up no space*/
-
 }
 
 
 
 .box {
-    border: double rgb(229, 180, 73);
+  border: double rgb(229, 180, 73);
   background-color:  rgba(66, 24, 24,0.5);
   color: white;
   border-radius: 5px;
@@ -100,30 +103,35 @@ table {
     
 }
 
-#galInfo, #genreInfo, #artistInfo, #paintindDiv
+#genreInfo, #artistInfo, #paintingDiv, #paintingInfo
 {   
-    height: 100%;
-    text-decoration: underline;
+    height: 840px;
+    overflow:scroll;
     grid-column: 1 ;
     grid-row: 1;  
     font-size: 20px;
 }
 
-#genreInfo{
-    height: 225%;
+#galInfo{
+     height: 383px;
+    overflow:scroll;
+    grid-column: 1 ;
+    grid-row: 1;  
+    font-size: 20px;
 }
+
+
 
 #map
 {
 
     grid-column: 1;
     grid-row: 2;
-    margin-top: 40px;
-    background-color: blue;
+
 }
 
-#paintingList, #paintingInfo {
-    height: 148%;
+#paintingList, #paintingInfo{
+    height: 840px;
     margin-right: 10px;
     grid-column: 2;
     grid-row: 1 / span 4;
@@ -133,11 +141,132 @@ table {
     color:white;
 }
 
-#artistInfo{
-    height: 230%;
+
+span{
+    text-decoration: none;
 }
+
+#artistName, #genreName, #galleryName{
+    font-size: 50px;
+    text-align: center;
+}
+
+#artPic, #genrePicture, #painting{
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border: double rgb(229, 180, 73);
+  background-color:  rgba(66, 24, 24,0.5);
+    border-radius: 5px;
+    padding: 5px;
+ 
+}
+
 #paintingDiv{
-    padding-bottom: 140%;
-    height: auto;
+    height:840px;
 }
+
+#singlePaintTitle{
+    font-size: 40px;
+    font-weight:bold;
+    grid-column: 1 / span 2;
+    grid-row: 0;
+}
+
+#singlePaintArtist{
+    grid-column: 1 / span 2;
+    grid-row: 2;
+    
+}
+
+#singlePaintingDesc{
+    grid-column: 1 / span 2;
+    grid-row: 3;
+}
+
+#yearOfPainting{
+    grid-column: 1 / span 2;
+    grid-row: 4;
+}
+
+#colourScheme{
+    grid-column: 1 / span 2;
+    grid-row: 5;
+}
+
+#colourBox{
+    grid-column: 1 / span 1;
+    grid-row: 6/ span 4;
+}
+
+#addToFavs{
+    grid-column: 2 / span 1;
+    grid-row: 6;
+}
+
+#seeFavs{
+    grid-column: 2 / span 1;
+    grid-row: 7;
+}
+
+#amountfaves{
+    grid-column: 2 / span 1;
+    grid-row: 8;
+}
+
+#ratingsLabel{
+    grid-column: 2 / span 1;
+    grid-row: 9;
+}
+
+#reviewsLabel{
+    grid-column: 1 / span 2;
+    grid-row: 10;
+}
+
+#reviewsSection{
+    grid-column: 1 / span 2;
+    grid-row: 11;
+}
+
+
+#paintingInfo{
+    font-size: 25px;
+    grid-gap: 10px;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50px 35px 40px 30px 35px 75px 75px 85px 75px 35px 40px ;
+     display:grid;
+}
+
+
+#addToFavs, #seeFavs{
+    color: rgb(229, 180, 73);
+}
+
+.color{
+    display:inline-block;
+    width:40px;
+    height:40px;
+    margin: 5px;
+}
+    
+#colourBox{
+    background-color: rgb(30, 30, 30);
+    width: 250px;
+    padding: 8px;
+    border: double rgb(114, 5, 5);
+}
+
+#reviewsSection{
+    border: double rgb(114, 5, 5);
+    background-color: rgba(63, 3, 3, 0.7);
+    height: 200px;
+    overflow: scroll;
+    font-size: 20px;
+}
+
+#comment{
+}
+
+
 }

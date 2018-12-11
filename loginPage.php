@@ -2,6 +2,7 @@
 <html>
 <head>
     <link rel="stylesheet" href="css/default.css">
+    <link rel="stylesheet" href="css/login.css">
     <script>
         function validateLogin() {
         var email = document.forms["loginForm"]["email"];
@@ -41,17 +42,17 @@ include 'php/header.php';
     <div id="loginDiv">
         <form name="loginForm" action="php/login.php" onsubmit="return validateLogin()" method="POST">
             
-       <table>
+       <table id = 'loginTable'>
         <TR>
             <td>            
-                <h1>Login</h1>
+                <h1 id = 'loginHeader'>Login</h1>
             </td>
             <td>            
 
             </td>
         </tr>
         <TR>
-            <td>            
+            <td id = 'emailLabel'>            
             Email:           
         </td>
             <td>            
@@ -60,8 +61,8 @@ include 'php/header.php';
         </tr>
 
         <TR>
-            <td>            
-        Pass:
+            <td id = 'passwordLabel'>            
+        Password:
             </td>
             <td>            
         <input type="text" name="pass">

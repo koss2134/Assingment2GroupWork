@@ -12,6 +12,7 @@ a{
     grid-row: 1 / span 10;
     color:white;
     background-color:  rgba(66, 24, 24,0.5);
+    margin-bottom:5px;
 }
 .box{
     border: double rgb(229, 180, 73);
@@ -20,4 +21,8 @@ a{
     border-radius: 5px;
     padding: 20px;
     font-size: 100%;
+}
+
+#head{
+    margin-bottom: 5px;
 }
